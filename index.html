@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+	<style>
+		body {
+			background-image: url(https://i.pinimg.com/564x/04/8a/9f/048a9f5babf8d1ab5137a6cf51aee55b.jpg);
+			background-attachment: fixed;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+
+		#main {
+			margin: 80px;
+		}
+
+		.container {
+			display: flex;
+			justify-content: center;
+		}
+
+		#bing {
+			padding: 25px;
+			border: 4px dotted brown;
+			border-radius: 8px;
+			background-color: #f2e7df;
+		}
+
+		button {
+			width: 250px;
+			margin: 8px;
+			background-color: lightgray;
+		}
+
+		#ref {
+			opacity: .5;
+		}
+
+	</style>
+
+	<title>Q4 SW2</title>
+</head>
+<body>
+	<div id="main">
+		<div class="container" id="sec"> <!-- a unique id is necessary to avoid the overlapping of elements -->
+			<div class="mt-3">
+				<img src="https://i.pinimg.com/originals/96/bb/ba/96bbbaecbe996339fc75a3de5f8ef9e2.gif" alt="girl studying" style="width: 350px;">
+			</div>
+			<div class="mt-3" id="bing">
+				<p class="h4 mb-3">Hi, my name is Bing! I'm here to help you <br> in math!</p>
+				<form class="mb-3">
+					<label for="x">Input value for x</label>
+					<input type="text" class="form-control" id="x" name="x"><br>
+					<label for="x">Input value for y</label>
+					<input type="text" class="form-control" id="y" name="y">
+				</form><br>
+				<img src="https://icon-library.com/images/information-icon-transparent/information-icon-transparent-26.jpg" style="width: 40px" onclick="document.getElementById('click').innerHTML='<strong><em>Click the buttons below to proceed.</em></strong'" alt="circle with i">
+					<!-- onlick="myFunction()" is used to make the next instructions appear here -->
+				<p class="mt-3" id="click"></p>
+			</div>
+			
+		</div>
+		<div class="container mt-4" id="functions1">
+			<button onclick="product()">product of x and y</button>
+			<button onclick="exponent()">x raised to y</button>
+		</div>
+		<div class="container mb-4" id="functions2">
+			<button onclick="remainder()">get the remainder</button>
+			<button onclick="equal()">check if x is equal to y</button>
+		</div>
+		<script>
+			function product() {
+				let x = parseFloat(document.getElementById('x').value); 
+           		let y = parseFloat(document.getElementById('y').value);
+           		alert("The product of " + x + " and " + y + " is " + (x * y));
+           		// * is to multiply x and y
+			}
+
+			function exponent() {
+				let x = parseFloat(document.getElementById('x').value); 
+           		let y = parseFloat(document.getElementById('y').value);
+           		alert(x + " raised to " + y + " is " + (x ** y));
+           		// ** is to raise x by y
+			}
+
+			function remainder() {
+				let x = parseFloat(document.getElementById('x').value); 
+           		let y = parseFloat(document.getElementById('y').value);
+           		alert("The remainder of " + x + " and " + y + " is " + (x % y));
+           		// % is to find the remainder of x and y
+           	}
+
+           	function equal() {
+				let x = parseFloat(document.getElementById('x').value); 
+           		let y = parseFloat(document.getElementById('y').value);
+
+           		if (x == y) {
+           			// == is to signify equality
+           			alert(x + " is equal to " + y);
+           		}
+           		else {
+           			alert(x + " is not equal to " + y)
+           		}
+           	}
+		</script>
+		<div class="container mt-5" id="ref">
+			<a href="https://www.pinterest.ph/pin/842313936575389970/">Studying girl gif</a>
+		</div>
+
+	</div>
+</body>
+</html>
